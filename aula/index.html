@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOLDEN EASTER | Haute Chocolaterie</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="loader">
+        <h1 class="loader-logo">PÁSCOA<span>GOLD</span></h1>
+        <div class="loader-bar-container">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+    <div class="blob-bg"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo" onclick="navigateTo('home')">GOLD<span>EN</span></div>
+            
+<div class="nav-main">
+    <span onclick="navigateTo('home')">Collection</span>
+    <span onclick="navigateTo('shop')">The Shop</span>
+    <span onclick="navigateTo('recipes')">Recipes</span> <span onclick="navigateTo('about')">Heritage</span>
+</div>
+
+            <div class="nav-right">
+                <div class="search-wrapper">
+                    <input type="text" id="main-search" placeholder="Search flavors..." onkeyup="handleSearch(event)">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <button id="theme-toggle" class="btn-icon"><i class="fa-solid fa-circle-half-stroke"></i></button>
+                <div class="cart-btn" onclick="toggleCart()">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="cart-drawer" class="drawer">
+        <div class="drawer-inner">
+            <div class="drawer-header">
+                <h2>Your Bag <span id="items-qty">(0)</span></h2>
+                <button onclick="toggleCart()" class="close-drawer">&times;</button>
+            </div>
+            <div id="cart-items-list" class="cart-scroll"></div>
+            <div class="drawer-footer">
+                <div class="total-box">
+                    <span>Estimated Total</span>
+                    <h3 id="cart-total">R$ 0,00</h3>
+                </div>
+                <button class="btn-checkout-gold">Checkout Now</button>
+            </div>
+        </div>
+    </div>
+
+    <main id="app-content"></main>
+
+    <script src="script.js"></script>
+</body>
+</html>
