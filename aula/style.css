@@ -271,3 +271,73 @@ body { background: var(--bg); color: var(--text); overflow-x: hidden; transition
 @media (max-width: 768px) {
     .pascoa-ad-banner { flex-direction: column; text-align: center; gap: 20px; }
 }
+/* Container de posicionamento */
+.download-container {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-gold-download {
+    position: relative;
+    padding: 18px 35px;
+    background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #b8860b 100%);
+    background-size: 200% auto;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(184, 134, 11, 0.3);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden; /* Necessário para o shimmer */
+}
+
+/* Ícone com leve pulsação */
+.btn-gold-download .icon {
+    font-size: 1.2rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* Efeito de Brilho (Shimmer) */
+.shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: none;
+}
+
+/* Animações Hover */
+.btn-gold-download:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(184, 134, 11, 0.5);
+    background-position: right center;
+}
+
+.btn-gold-download:hover .shimmer {
+    animation: shimmerEffect 1.5s infinite;
+}
+
+.btn-gold-download:active {
+    transform: translateY(0);
+}
+
+@keyframes shimmerEffect {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
